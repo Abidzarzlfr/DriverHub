@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-item {
+    font-weight: bold;
+}
+
+.jadwal-hari-ini {
+    height: 630px;  
+    background-color: #E2E1E1;
+    overflow: hidden;
+}
+
+/* HEADING JADWAL */
+.heading-jadwal h1{
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90px;
+    margin-top: 40px;
+}
+
+
+
+/* CARD PLAT NOMOR */
+.widget1 {
+    gap: 37px;
+}
+
+/* widget plat */
+.widget-plat, .widget-jam{
+    width: 600px;
+    height: 164.5px;
+    background-color: #FFC632;
+
+    border-radius: 32px;
+    border: 1px solid #FFC632;
+}
+
+.widget-plat-content h2, .widget-kode h2, .widget-penumpang h2, .widget-jam h2{
+    color: #111;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0;
+
+    margin-left: 25px;
+}
+
+.widget-plat-content h5, .widget-kode h5, .widget-jam h5 {
+    margin-left: 25px;
+    color: #624704;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 20px;
+}
+
+.widget-plat-content p, .widget-kode p, .widget-jam p {
+    margin-left: 25px;
+}
+
+.fa-solid {
+    margin-right: 25px;
+    margin-top: 20px;
+    font-size: 23px;
+}
+
+/* widget tujuan */
+.widget-tujuan {
+    width: 350px;
+    height: 164.5px;
+    flex-shrink: 0;
+
+    border-radius: 32px;
+    background-color: #FF8989;
+}
+
+.widget-tujuan-content h2{
+    color: #111;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 0;
+
+    margin-left: 25px;
+}
+
+.widget-tujuan-content p, .widget-penumpang p {
+    margin-left: 25px;
+    margin-top: 53px;
+}
+
+/* widget kode & penumpang */
+
+.widget-kode, .widget-penumpang {
+    width: 300px;
+    height: 164.5px;
+    flex-shrink: 0;
+    border-radius: 32px;
+    background-color: #FFC632;
+}
+
+
+/* Tabel Penumpang */
+.tabel-penumpang {
+    height: 550px;  
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.heading-tabel-penumpang h1{
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90px;
+    margin-top: 40px
+}
+
+/* Footer */
+.footer {
+    height: 300px;
+    background-color: #000;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    margin-top: 55px;
+    margin-bottom: 25px;
+}
+
+.footer-nav a{
+    text-decoration: none;
+    color: #ffff;
+    margin-left: 20px;
+}
+
+.copyright {
+    margin-top: 50px;
+}
+
+.copyright p {
+    background-color: #FFC632;
+    color: white;
+    padding: 5px;
+}
+
+
+
+

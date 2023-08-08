@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    width: auto;
+}
+
+/* Navbar */
+.nav-item {
+    font-weight: bold;
+}
+
+/* About */
+
+/* About-top */
+.about-top {
+    height: 600px;
+    background-color: #E2E1E1;
+    overflow: hidden;
+}
+
+.about-top-content {
+    margin-top: 110px;
+}
+
+.about-top-content-company {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.about-top-content-title {
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90px;
+}
+
+/* About mid */
+.about-mid {
+    height: 600px;
+    background-color: #F5F5F5;
+}
+
+.main-mid-content {
+    display: flex;
+    /* membuat konten ditengah */
+    justify-content: center;
+    clear: left;
+}
+
+.content-icon{
+    width: 25%;
+    padding: 70px;
+    margin: 40px;
+}
+
+.content-icon img {
+    width: 180px;
+}
+
+.content-icon-title {
+    text-align: center;
+    margin-top: 29px;
+    margin-bottom: 20px;
+}
+
+.content-icon-text {
+    text-align: justify;
+}
+
+
+/* About end */
+.about-end {
+    height: 600px;
+    width: auto;
+    background-color: #E2E1E1;
+}
+
+.header-end {
+    padding-top: 35px;
+    text-align: center;
+}
+
+.google-maps {
+    align-items: center;
+}
+
+.mapouter {
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    height: 300px;
+    background-color: #000;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    margin-top: 55px;
+    margin-bottom: 25px;
+}
+
+.footer-nav a{
+    text-decoration: none;
+    color: #ffff;
+    margin-left: 20px;
+}
+
+.copyright {
+    margin-top: 50px;
+}
+
+.copyright p {
+    background-color: #FFC632;
+    color: white;
+    padding: 5px;
+}
+
+/* RESPONSIVE */

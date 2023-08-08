@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.nav-item {
+    font-weight: bold;
+}
+
+/* Input Data Kendaraan */
+.input-kendaraan {
+    height: 500px;  
+    background-color: #F5F5F5;
+    overflow: hidden;
+}
+
+.heading-input-kendaraan h1{
+    font-style: normal;
+    font-weight: 600;
+    line-height: 90px;
+    margin-top: 40px
+}
+
+
+
+/* Footer */
+.footer {
+    height: 300px;
+    background-color: #000;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-logo {
+    margin-top: 55px;
+    margin-bottom: 25px;
+}
+
+.footer-nav a{
+    text-decoration: none;
+    color: #ffff;
+    margin-left: 20px;
+}
+
+.copyright {
+    margin-top: 50px;
+}
+
+.copyright p {
+    background-color: #FFC632;
+    color: white;
+    padding: 5px;
+}
