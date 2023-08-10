@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use Illuminate\Auth\Events\Login;
+use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', [AboutController::class, 'index']);
+
+Route::get('/login', [LoginController::class, 'index']);
