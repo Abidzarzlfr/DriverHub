@@ -86,7 +86,7 @@
               </div>
           </div>
           <div class="button-tambah-keberangkatan">
-            <a class="btn btn-dark" href="/Applications/XAMPP/xamppfiles/htdocs/DUMMY DRIVER HUB/admin/admin-add-keberangkatan/add-keberangkatan.html" role="button">Tambah Keberangkatan</a>
+            <a class="btn btn-dark" href="{{ url('add-keberangkatan') }}" role="button">Tambah Keberangkatan</a>
           </div>
         </div>
     </div>
@@ -128,8 +128,8 @@
                   <td>D 1234 ACB</td>
                   <td>DRV1</td>
                   <td>
-                    <a class="btn btn-dark" href="../detail/detail.html" role="button">Detail</a>
-                    <a class="btn btn-dark" href="/Applications/XAMPP/xamppfiles/htdocs/DUMMY DRIVER HUB/admin/admin-edit-tb-keberangkatan/edit-keberangkatan.html" role="button">Edit</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
+                    <a class="btn btn-dark" href="{{ url('edit-keberangkatan') }}" role="button">Edit</a>
                   </td>
                 </tr>
                 <tr>
@@ -144,8 +144,8 @@
                   <td>D 1234 ACB</td>
                   <td>DRV1</td>
                   <td>
-                    <a class="btn btn-dark" href="../detail/detail.html" role="button">Detail</a>
-                    <a class="btn btn-dark" href="/Applications/XAMPP/xamppfiles/htdocs/DUMMY DRIVER HUB/admin/admin-edit-tb-keberangkatan/edit-keberangkatan.html" role="button">Edit</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
                   </td>
                 </tr>
                 <tr>
@@ -160,8 +160,8 @@
                   <td>D 1234 ACB</td>
                   <td>DRV1</td>
                   <td>
-                    <a class="btn btn-dark" href="../detail/detail.html" role="button">Detail</a>
-                    <a class="btn btn-dark" href="/Applications/XAMPP/xamppfiles/htdocs/DUMMY DRIVER HUB/admin/admin-edit-tb-keberangkatan/edit-keberangkatan.html" role="button">Edit</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
                   </td>
                 </tr>
                 <tr>
@@ -176,8 +176,8 @@
                   <td>D 1234 ACB</td>
                   <td>DRV1</td>
                   <td>
-                    <a class="btn btn-dark" href="../detail/detail.html" role="button">Detail</a>
-                    <a class="btn btn-dark" href="/Applications/XAMPP/xamppfiles/htdocs/DUMMY DRIVER HUB/admin/admin-edit-tb-keberangkatan/edit-keberangkatan.html" role="button">Edit</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
                   </td>
                 </tr>
                 <tr>
@@ -192,8 +192,8 @@
                   <td>D 1234 ACB</td>
                   <td>DRV1</td>
                   <td>
-                    <a class="btn btn-dark" href="../detail/detail.html" role="button">Detail</a>
-                    <a class="btn btn-dark" href="/Applications/XAMPP/xamppfiles/htdocs/DUMMY DRIVER HUB/admin/admin-edit-tb-keberangkatan/edit-keberangkatan.html" role="button">Edit</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
                   </td>
                 </tr>
                 <tr>
@@ -208,8 +208,8 @@
                   <td>D 1234 ACB</td>
                   <td>DRV1</td>
                   <td>
-                    <a class="btn btn-dark" href="../detail/detail.html" role="button">Detail</a>
-                    <a class="btn btn-dark" href="/Applications/XAMPP/xamppfiles/htdocs/DUMMY DRIVER HUB/admin/admin-edit-tb-keberangkatan/edit-keberangkatan.html" role="button">Edit</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
+                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
                   </td>
                 </tr>
               </tbody>
