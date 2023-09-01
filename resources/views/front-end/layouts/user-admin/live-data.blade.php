@@ -85,9 +85,6 @@
                 </div>
               </div>
           </div>
-          <div class="button-tambah-keberangkatan">
-            <a class="btn btn-dark" href="{{ url('add-keberangkatan') }}" role="button">Tambah Keberangkatan</a>
-          </div>
         </div>
     </div>
 
@@ -112,106 +109,24 @@
                   <th scope="col">Keterangan</th>
                   <th scope="col">Plat Nomor</th>
                   <th scope="col">Kode</th>
-                  <th scope="col">...</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Bandung</td>
-                  <td>Jakarta</td>
-                  <td>08:00 AM</td>
-                  <td>17-07-2023</td>
-                  <td>20-07-2023</td>
-                  <td>Genap</td>
-                  <td>D 1234 ACB</td>
-                  <td>DRV1</td>
-                  <td>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
-                    <a class="btn btn-dark" href="{{ url('edit-keberangkatan') }}" role="button">Edit</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Mark</td>
-                  <td>Bandung</td>
-                  <td>Jakarta</td>
-                  <td>08:00 AM</td>
-                  <td>17-07-2023</td>
-                  <td>20-07-2023</td>
-                  <td>Genap</td>
-                  <td>D 1234 ACB</td>
-                  <td>DRV1</td>
-                  <td>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Mark</td>
-                  <td>Bandung</td>
-                  <td>Jakarta</td>
-                  <td>08:00 AM</td>
-                  <td>17-07-2023</td>
-                  <td>20-07-2023</td>
-                  <td>Genap</td>
-                  <td>D 1234 ACB</td>
-                  <td>DRV1</td>
-                  <td>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Mark</td>
-                  <td>Bandung</td>
-                  <td>Jakarta</td>
-                  <td>08:00 AM</td>
-                  <td>17-07-2023</td>
-                  <td>20-07-2023</td>
-                  <td>Genap</td>
-                  <td>D 1234 ACB</td>
-                  <td>DRV1</td>
-                  <td>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Mark</td>
-                  <td>Bandung</td>
-                  <td>Jakarta</td>
-                  <td>08:00 AM</td>
-                  <td>17-07-2023</td>
-                  <td>20-07-2023</td>
-                  <td>Genap</td>
-                  <td>D 1234 ACB</td>
-                  <td>DRV1</td>
-                  <td>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
-                  </td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>Mark</td>
-                  <td>Bandung</td>
-                  <td>Jakarta</td>
-                  <td>08:00 AM</td>
-                  <td>17-07-2023</td>
-                  <td>20-07-2023</td>
-                  <td>Genap</td>
-                  <td>D 1234 ACB</td>
-                  <td>DRV1</td>
-                  <td>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
-                    <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Edit</a>
-                  </td>
-                </tr>
+                
+                @foreach($keberangkatan as $index => $item)
+                  <tr>
+                    <th scope="row">{{ $index + 1 }}</th>
+                    <td>{{ $item->driver->nama_driver}}</td>
+                    <td>{{ $item->keberangkatan}}</td>
+                    <td>{{ $item->tujuan}}</td>
+                    <td>{{ $item->jam}}</td>
+                    <td>{{ $item->tanggal}}</td>
+                    <td>{{ $item->tanggal}}</td>
+                    <td>{{ $item->Keterangan}}</td>
+                    <td>{{ $item->kendaraan->nomor_kendaraan}}</td>
+                    <td>DRV1</td>
+                  </tr>
+                @endforeach
               </tbody>
             </table>
           </div>
@@ -233,46 +148,18 @@
                   <th scope="col">No</th>
                   <th scope="col">Nama Driver</th>
                   <th scope="col">Status</th>
-                  <th scope="col">Kode</th>
+                  <th scope="col">NPK</th>
                 </tr>
               </thead>
               <tbody>
+                @foreach($drivers as $driver)
                 <tr>
                   <th scope="row">1</th>
-                  <td>Mark</td>
-                  <td>Available</td>
-                  <td>DRV1</td>
+                    <td>{{ $driver->nama_driver }}</td>
+                    <td>{{ $driver->status }}</td>
+                    <td>{{ $driver->npk }}</td>
                 </tr>
-                <tr>
-                  <th scope="row">2</th>
-                  <td>Tuti</td>
-                  <td>Unvailable</td>
-                  <td>DRV3</td>
-                </tr>
-                <tr>
-                  <th scope="row">3</th>
-                  <td>Dani</td>
-                  <td>Available</td>
-                  <td>DRV4</td>
-                </tr>
-                <tr>
-                  <th scope="row">4</th>
-                  <td>Mark</td>
-                  <td>Available</td>
-                  <td>DRV2</td>
-                </tr>
-                <tr>
-                  <th scope="row">5</th>
-                  <td>Mark</td>
-                  <td>Available</td>
-                  <td>DRV6</td>
-                </tr>
-                <tr>
-                  <th scope="row">6</th>
-                  <td>Mark</td>
-                  <td>Available</td>
-                  <td>DRV5</td>
-                </tr>
+                @endforeach
               </tbody>
             </table>
           </div>

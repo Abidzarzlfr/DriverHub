@@ -14,19 +14,16 @@
                 <a class="nav-link" href="{{ url('live-data') }}">Live Data</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('edit-keberangkatan') }}">Edit</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{{ url('delete') }}">Delete</a>
+                <a class="nav-link" href="{{ url('keberangkatan') }}">Keberangkatan</a>
               </li>
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Master
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ url('input-data-driver') }}">Input Data Driver</a></li>
-                  <li><a class="dropdown-item" href="{{ url('input-data-kendaraan') }}">Input Data Kendaraan</a></li>
-                  <li><a class="dropdown-item" href="{{ url('input-data-penumpang') }}">Input Data Penumpang</a></li>
+                  <li><a class="dropdown-item" href="{{ url('input-data-driver') }}">Data Driver</a></li>
+                  <li><a class="dropdown-item" href="{{ url('input-data-kendaraan') }}">Data Kendaraan</a></li>
+                  <li><a class="dropdown-item" href="{{ url('input-data-karyawan') }}">Data Karyawan</a></li>
                 </ul>
               </li>
             </ul>

@@ -27,8 +27,12 @@
           <div class="m-auto" style="width: 90%">
               <h2 class="fw-bold mb-4">Login</h2>
               <!-- Form -->
-              <form action="/abidzar_login" method="post">
+              <form action="{{ route('login') }}" method="post">
+                  @csrf
                   <!-- Email -->
+                  @error('message')
+                    <strong>{{ $message }}</strong>
+                  @enderror
                   <div class="mb-3 position-relative">
                       <label for="email" class="form-label">Email</label>
                       <input type="email" class="form-control" id="email" name="email" required>
@@ -39,7 +43,7 @@
                       <input type="password" class="form-control" id="password" name="password" required>
                   </div>
                   <!-- Login Button -->
-                  <a class="btn btn-dark px-4 mt-5" href="../about/about.html" role="button">Login</a>
+                  <button type="submit" class="btn btn-dark px-4 mt-5" role="button">Login</a>
 
               </form>
           </div>

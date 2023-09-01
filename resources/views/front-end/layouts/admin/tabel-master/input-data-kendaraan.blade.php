@@ -38,15 +38,16 @@
             <h1 class="border-bottom border-dark mb-5">Input Data Kendaraan</h1>
           </div>
           <!-- form -->
-          <form>
+          <form action="{{ route('input-data-kendaraan') }}" method="post">
+                  @csrf
             <fieldset enabled>
                 <div class="mb-3">
                     <label for="namaKendaraan" class="form-label">Jenis Kendaraan</label>
-                    <input type="namaKendaraan" class="form-control" id="namaKendaraan" aria-describedby="emailHelp">
+                    <input type="text" name='nama_kendaraan' class="form-control" id="namaKendaraan" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="plat" class="form-label">Nomor Polisi</label>
-                    <input type="plat" class="form-control" id="plat" aria-describedby="emailHelp">
+                    <input type="verchar" name='nomor_kendaraan' class="form-control" id="plat" aria-describedby="emailHelp">
                 </div>
               <button type="submit" class="btn btn-dark mt-5">Simpan</button>
             </fieldset>

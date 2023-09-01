@@ -64,7 +64,11 @@
                   <td>Genap</td>
                   <td>D 1234 ACB</td>
                   <td>DRV1</td>
-                  <td><button type="button" class="btn btn-dark">Delete</button></td>
+                <form method="POST" action="{{ route('delete', ['id' => $item->id]) }}" style="display: inline;">
+                    @csrf
+                    @method('DELETE')
+                  <button type="submit" class="btn btn-dark">Delete</button>
+                </form>
                 </tr>
                 <tr>
                   <th scope="row">2</th>

@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('style/Tabel-Master/input-data-penumpang/input-data-penumpang.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/Tabel-Master/input-data-karyawan/input-data-karyawan.css') }}">
 
     <!-- Icon -->
     <script src="https://kit.fontawesome.com/85206701c2.js" crossorigin="anonymous"></script>
@@ -35,22 +35,23 @@
       <div class="container">
         <div class="heading-tabel">
           <div class="heading-input-penumpang">
-            <h1 class="border-bottom border-dark mb-5">Input Data Penumpang</h1>
+            <h1 class="border-bottom border-dark mb-5">Input Data Karyawan</h1>
           </div>
           <!-- form -->
-          <form>
+          <form action="{{ route('input-data-karyawan') }}" method="post">
+                  @csrf
             <fieldset enabled>
                 <div class="mb-3">
-                    <label for="namaPenumpang" class="form-label">Nama Penumpang</label>
-                    <input type="namaPenumpang" class="form-control" id="namaPenumpang" aria-describedby="emailHelp">
+                    <label for="nama_karyawan" class="form-label">Nama Karyawan</label>
+                    <input type="text" name="nama_karyawan" class="form-control" id="nama_karyawan" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="npk" class="form-label">NPK</label>
-                    <input type="npk" class="form-control" id="npk" aria-describedby="emailHelp">
+                    <input type="text" name="npk" class="form-control" id="npk" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="divisi" class="form-label">Divisi</label>
-                    <input type="divisi" class="form-control" id="divisi" aria-describedby="emailHelp">
+                    <input type="text" name="divisi_id" class="form-control" id="divisi" aria-describedby="emailHelp">
                 </div>
               <button type="submit" class="btn btn-dark mt-5">Simpan</button>
             </fieldset>

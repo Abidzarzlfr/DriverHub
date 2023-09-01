@@ -38,19 +38,20 @@
             <h1 class="border-bottom border-dark mb-5">Input Data Driver</h1>
           </div>
           <!-- form -->
-          <form>
+          <form action="{{ route('input-data-driver') }}" method="post">
+                  @csrf
             <fieldset enabled>
                 <div class="mb-3">
                     <label for="namaDriver" class="form-label">Nama Driver</label>
-                    <input type="namaDriver" class="form-control" id="namaDriver" aria-describedby="emailHelp">
+                    <input type="text"  name='nama_driver' class="form-control" id="namaDriver" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="npk" class="form-label">NPK</label>
-                    <input type="npk" class="form-control" id="npk" aria-describedby="emailHelp">
+                    <input type="npk" name="npk" class="form-control" id="npk" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
                     <label for="divisi" class="form-label">Divisi</label>
-                    <input type="divisi" class="form-control" id="divisi" aria-describedby="emailHelp">
+                    <input type="divisi" name="divisi_id" class="form-control" id="divisi" aria-describedby="emailHelp">
                 </div>
               <button type="submit" class="btn btn-dark mt-5">Simpan</button>
             </fieldset>
