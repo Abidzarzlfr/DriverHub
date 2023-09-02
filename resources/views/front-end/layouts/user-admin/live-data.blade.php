@@ -36,26 +36,36 @@
           <div class="heading-jadwal">
             <h1>Jadwal Hari Ini</h1>
           </div>
+        @foreach($keberangkatan as $index => $item)
+          @php
+            // Mengambil tanggal keberangkatan dari item
+            $tanggalKeberangkatan = \Carbon\Carbon::parse($item->tanggal);
+            // Membuat objek tanggal hari ini
+            $tanggalHariIni = \Carbon\Carbon::now();
+          @endphp
+
+          {{-- Memeriksa apakah tanggal keberangkatan sama dengan tanggal hari ini --}}
+          @if ($tanggalKeberangkatan->isSameDay($tanggalHariIni))
           <div class="widget1 d-flex justify-content-between mt-4 mb-5">
                 <div class="widget-plat tilebox-one mt-4">
                   <div class="widget-plat-content card-body">
                     <i class="fa-solid fa-car float-end"></i>
-                    <h2 class="widget-plat-content-nomor">D 1234 ACB</h2>
-                    <h5 class="widget-plat-content-mobil">Toyota Innova Reborn</h5>
+                    <h2 class="widget-plat-content-nomor">{{ $item->kendaraan->nomor_kendaraan}}</h2>
+                    <h5 class="widget-plat-content-mobil">{{ $item->kendaraan->nama_kendaraan}}</h5>
                     <p class="widget-plat-content-desc">Plat Nomor</p>
                   </div>
                 </div>
                 <div class="widget-tujuan tilebox-one mt-4">
                   <div class="widget-tujuan-content card-body">
                     <i class="fa-solid fa-route float-end"></i>
-                    <h2 class="widget-tujuan-content-kota">BANDUNG</h2>
+                    <h2 class="widget-tujuan-content-kota">{{ $item->keberangkatan}}</h2>
                     <p class="widget-tujuan-content-desc">Keberangkatan</p>
                   </div>
                 </div>
                 <div class="widget-tujuan tilebox-one mt-4">
                   <div class="widget-tujuan-content card-body">
                     <i class="fa-solid fa-route float-end"></i>
-                    <h2 class="widget-tujuan-content-kota">JAKARTA</h2>
+                    <h2 class="widget-tujuan-content-kota">{{ $item->tujuan}}</h2>
                     <p class="widget-tujuan-content-desc">Tujuan</p>
                   </div>
               </div>
@@ -65,7 +75,7 @@
                 <div class="widget-kode-content card-body">
                   <i class="fa-solid fa-id-card float-end"></i>
                   <h2 class="widget-kode-content-kode">DRV1</h2>
-                  <h5 class="widget-kode-content-driver">Andi Rahman</h5>
+                  <h5 class="widget-kode-content-driver">{{ $item->driver->nama_driver}}</h5>
                   <p class="widget-kode-content-desc">Keberangkatan</p>
                 </div>
               </div>
@@ -87,6 +97,15 @@
           </div>
         </div>
     </div>
+          @endif
+        @endforeach
+        Dalam kode di atas, kami menggunakan Carbon untuk memanipulasi tanggal dan waktu dalam PHP. Kami membandingkan tanggal keberangkatan dengan tanggal hari ini menggunakan isSameDay() dari Carbon. Jika tanggal keberangkatan sama dengan tanggal hari ini, maka baris data akan ditampilkan di tabel. Jika tidak, baris data akan diabaikan. Pastikan Anda telah menginstal Carbon di proyek Anda jika belum melakukannya.
+
+
+
+
+
+
 
     <!-- Table Keberangkatan -->
     <div class="tabel-keberangkatan">
