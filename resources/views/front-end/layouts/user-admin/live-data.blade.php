@@ -89,8 +89,8 @@
               <div class="widget-jam tilebox-one m  t-1">
                 <div class="widget-jam-content card-body">
                   <i class="fa-solid fa-calendar float-end"></i>
-                  <h2 class="widget-jam-content-kota">08:00 AM</h2>
-                  <h5 class="widget-penumpang-content-kota">18-10-2023</h5>
+                  <h2 class="widget-jam-content-kota">{{ $item->jam}}</h2>
+                  <h5 class="widget-penumpang-content-kota">{{ $item->tanggal}}</h5>
                   <p class="widget-jam-content-desc">Jam Keberangkatan</p>
                 </div>
               </div>
