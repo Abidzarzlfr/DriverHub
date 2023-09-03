@@ -28,7 +28,7 @@ class KotaSeeder extends Seeder
             ['nama_kota' => 'Malang'],
             ['nama_kota' => 'Semarang'],
             ['nama_kota' => 'Denpasar'],
-            ['nama_kota' => 'Turen'] 
+            ['nama_kota' => 'Turen']
         ];
 
         foreach ($kota_kota as $kota) {

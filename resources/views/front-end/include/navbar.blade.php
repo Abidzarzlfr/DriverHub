@@ -10,7 +10,7 @@
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="{{ url('about') }}">About</a>
               </li>
-              <li class="nav-item">
+              <li class="nav-item ">
                 <a class="nav-link" href="{{ url('live-data') }}">Live Data</a>
               </li>
               <li class="nav-item">

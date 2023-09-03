@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('style/Tabel-Master/input-data-karyawan/input-data-karyawan.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/Tabel-Master/input-data-driver/input-data-karyawan.css') }}">
 
     <!-- Icon -->
     <script src="https://kit.fontawesome.com/85206701c2.js" crossorigin="anonymous"></script>
