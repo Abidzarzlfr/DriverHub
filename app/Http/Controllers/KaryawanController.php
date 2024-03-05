@@ -11,10 +11,28 @@ class KaryawanController extends Controller
 {
     public function index()
     {
-        $karyawan = Karyawan::all();
-        $divisi = Divisi::all();
-        return view('front-end.layouts.admin.tabel-master.input-data-karyawan', compact('karyawan','divisi'));
+        {
+            if (Auth::check()) {
+                $karyawan = Karyawan::all();
+                return view('front-end.layouts.user-admin.karyawan', compact('karyawan'));
+            }else{
+                return view('front-end.layouts.admin.login');
+            }
+        }
     }
+
+    public function add(Request $request)
+    {
+     
+        if (Auth::check()) {
+            $divisi = Divisi::all();
+            return view('front-end.layouts.admin.tabel-master.input-data-karyawan', compact('divisi'));
+        }else{
+            return view('front-end.layouts.admin.login');
+        }
+        
+    }
+
 
     public function store(Request $request)
     {
@@ -25,7 +43,7 @@ class KaryawanController extends Controller
                 'npk' => $request->npk,
                 'created_by' => auth()->user()->user_id
             ]);
-            return redirect('input-data-karyawan');
+            return redirect('karyawan');
         }else{
             return view('front-end.layouts.admin.login');
         }

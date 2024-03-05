@@ -14,7 +14,7 @@ class Keberangkatan extends Model
     protected $fillable = [
         'kendaraan_id',
         'driver_id',
-        'keberangakatan',
+        'keberangkatan',
         'tujuan',
         'jam',
         'tanggal',

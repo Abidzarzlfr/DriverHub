@@ -107,7 +107,6 @@ body {
 
 /* Tabel Keberangkatan */
 .tabel-keberangkatan {
-    height: 550px;  
     background-color: #F5F5F5;
     /* agar bisa menggunakan margin top dan background tidak mengikuti */
     overflow: hidden;
@@ -126,7 +125,6 @@ body {
 
 /* Tabel Driver */
 .tabel-driver {
-    height: 500px;  
     background-color: #fff;
     overflow: hidden;
 }

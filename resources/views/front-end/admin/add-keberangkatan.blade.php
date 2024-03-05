@@ -43,7 +43,7 @@
             <fieldset enabled>
               <div class="mb-3">
                 <label for="disabledSelect" class="form-label">Nama Driver</label>
-                <select id="disabledSelect" class="form-select" name="driver">
+                <select id="disabledSelect" class="form-select" name="driver_id">
                   @foreach ($driver as $item)
                     <option value="{{ $item->driver_id }}">{{ $item->nama_driver }}</option>
                   @endforeach
@@ -69,17 +69,21 @@
               </div>
               <div class="mb-3">
                 <label for="jam" class="form-label">Jam</label>
-                <input id="jam" class="form-select" type="time" name="jam">
+                <input id="jam" class="form-control" type="time" name="jam">
               </div>
               <div class="mb-3">
-                <label for="tanggal" class="form-label">tanggal</label>
-                <input id="tanggal" class="form-select" type="date" name="tanggal">
+                <label for="tanggal" class="form-label">tanggal Dari</label>
+                <input id="tanggal" class="form-control" type="date" name="tanggal">
+              </div>
+              <div class="mb-3">
+                <label for="tanggal" class="form-label">tanggal Sampai</label>
+                <input id="tanggal" class="form-control" type="date" name="tanggal">
               </div>
               <div class="mb-3">
                 <label for="disabledSelect" class="form-label">Nama Kendaraan</label>
                 <select id="disabledSelect" class="form-select" name='nama_kendaraan'>
                   @foreach ($kendaraan as $item)
-                    <option value="{{ $item->nama_kendaraan }}">{{ $item->nama_kendaraan }}</option>
+                    <option value="{{ $item->kendaraan_id }}">{{ $item->nama_kendaraan }}</option>
                   @endforeach
                 </select>
               </div>
@@ -91,11 +95,11 @@
                   @endforeach
                 </select> -->
               </div>
-              <div class="mb-3">
+              <!-- <div class="mb-3">
                 <label for="kode" class="form-label">Kode Keberangkatan</label>
-                <input id="kode" class="form-select" type="text" name="kode">
-              </div>
-              <div class="mb-3">
+                <input id="kode" class="form-control" type="text" name="kode">
+              </div> -->
+              <!-- <div class="mb-3">
                 <label for="disabledSelect" class="form-label">Nama Penumpang</label>
                 <select id="disabledSelect" class="form-select" name='nama_karyawan'>
                   @foreach ($karyawan as $item)
@@ -118,6 +122,10 @@
                     <option value="{{ $item->nama_divisi }}">{{ $item->nama_divisi }}</option>
                   @endforeach
                 </select>
+              </div> -->
+              <div class="mb-3">
+                <label for="disabledSelect" class="form-label">Keterangan</label>
+                <textarea name="keterangan" class="form-control" id="keterangan" cols="10" rows="1"></textarea>
               </div>
               <button type="submit" class="btn btn-dark">Simpan</button>
             </fieldset>
@@ -126,11 +134,6 @@
       </div>
     </div>
 
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
     <!-- Footer -->
     @include('front-end.include.footer')
     

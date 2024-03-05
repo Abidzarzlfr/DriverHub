@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('style/Tabel-Master/input-data-driver/input-data-driver.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/live-data/live-data.css') }}">
 
     <!-- Icon -->
     <script src="https://kit.fontawesome.com/85206701c2.js" crossorigin="anonymous"></script>
@@ -30,35 +30,41 @@
     <!-- Navbar -->
     @include('front-end.include.navbar')
 
-    <!-- Input Data Driver -->
-    <div class="input-driver">
-      <div class="container">
-        <div class="heading-tabel">
-          <div class="heading-input-driver">
-            <h1 class="border-bottom border-dark mb-5">Input Data Driver</h1>
-          </div>
-          <!-- form -->
-          <form action="{{ route('input-data-driver') }}" method="post">
-                  @csrf
-            <fieldset enabled>
-                <div class="mb-3">
-                    <label for="namaDriver" class="form-label">Nama Driver</label>
-                    <input type="text"  name='nama_driver' class="form-control" id="namaDriver" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="npk" class="form-label">NPK</label>
-                    <input type="npk" name="npk" class="form-control" id="npk" aria-describedby="emailHelp">
-                </div>
-                <div class="mb-3">
-                    <label for="divisi" class="form-label">Divisi</label>
-                    <input type="divisi" name="divisi_id" class="form-control" id="divisi" aria-describedby="emailHelp">
-                </div>
-              <button type="submit" class="btn btn-dark mt-5">Simpan</button>
-            </fieldset>
-          </form>
+    <!-- Table Karyawan -->
+    <div class="tabel-driver">
+    <div class="container">
+      <div class="heading-tabel">
+        <div class="heading-tabel-driver">
+          <h1>Tabel Karyawan</h1>
+        </div>
+        <div class="button-tambah-driver">
+              <a class="btn btn-dark" href="{{ url('input-data-karyawan') }}" role="button">Tambah Karyawan</a>
+            </div>
+        <div class="body-tabel-karyawan">
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Nama Karyawan</th>
+                <th scope="col">Divisi</th>
+                <th scope="col">NPK</th>
+              </tr>
+            </thead>
+            <tbody>
+              @foreach($karyawan as $index => $item)
+              <tr>
+                <th scope="row">{{ $index + 1 }}</th>
+                <td>{{ $item->nama_karyawan }}</td>
+                <td>{{ $item->divisi->nama_divisi }}</td>
+                <td>{{ $item->npk }}</td>
+              </tr>
+              @endforeach
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
+  </div>
 
     <!-- Footer -->
     @include('front-end.include.footer')

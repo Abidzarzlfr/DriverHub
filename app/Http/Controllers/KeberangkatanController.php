@@ -24,30 +24,8 @@ class KeberangkatanController extends Controller
             return view('front-end.layouts.admin.login');
         }
     }
-    public function store(Request $request)
+    public function add(Request $request)
     {
-        // $data = new Keberangkatan();
-        // $driver = Driver::find(request->nama_driver);
-        // $kota = Kota::find(request->nama_kota);
-        // $kendaraan = Kendaraan::find(request->nama_kendaraan);
-        // $karyawan = Karyawan::find(request->nama_karyawan);
-        // $penumpang = Penumpang::find(request->karyawan_id);
-        // $divisi = Divisi::find(request->nama_divisi);
-        // $data->nama_driver = $$driver->nama_driver;
-        // $data->nama_kendaraan = $kendaraan->nama_kendaraan;
-        // $data->tujuan = $kota->nama_kota;
-        // $data->jam = request->jam;
-        // $data->kode = request->kode;
-        // $data->tanggal = request->tanggal;
-        // $data->jumlah_penumpang = request->jumlah_penumpang;
-        // $data->tujuan = $kota->nama_kota;
-        // $data->keberangkatan = $kota->nama_kota;
-        // $data->divisi = $divisi->nama_divisi;
-
-
-        // $data->save();
-        // return view('front-end.layouts.admin.add-keberangkatan',compact($data));
-
         $driver = Driver::all();
         $kota = Kota::all();
         $kendaraan = Kendaraan::all();
@@ -56,6 +34,28 @@ class KeberangkatanController extends Controller
         $divisi = Divisi::all();
 
         return view('front-end.layouts.admin.add-keberangkatan',compact('driver', 'kota', 'kendaraan','karyawan','penumpang','divisi'));
+    }
+
+    public function store(Request $request)
+    {
+        // echo $request;
+        if (Auth::check()) {
+            Keberangkatan::create([
+                'kendaraan_id' => $request->nama_kendaraan,
+                'driver_id' => $request->driver_id,
+                'keberangkatan'=> $request->keberangkatan,
+                'tujuan'=> $request->tujuan,
+                'jam'=> $request->jam,
+                'tanggal'=> $request->tanggal,
+                'keterangan'=> $request->keterangan,
+                'kode'=> $request->kode,
+                'created_by' => auth()->user()->user_id
+            ]);
+            return redirect('keberangkatan');
+        }else{
+            return view('front-end.layouts.admin.login');
+        }
+
     }
 
     public function edit(Keberangkatan $keberangkatan)
@@ -75,6 +75,16 @@ class KeberangkatanController extends Controller
         $keberangkatan->delete();
         return view('front-end.layouts.admin.delete')->with('success', 'Data keberangkatan berhasil dihapus.');
     }
+
+    // public function show():
+    // {
+    //     if (Auth::check()) {
+    //         $keberangkatan = Keberangkatan::with(['kendaraan', 'driver','penumpang','karyawan'])->get();
+    //         return view('front-end.layouts.user-admin.detail', compact('keberangkatan'));
+    //     }else{
+    //         return view('front-end.layouts.admin.login');
+    //     }
+    // }
 
     
 

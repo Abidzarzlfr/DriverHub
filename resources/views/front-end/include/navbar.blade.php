@@ -11,24 +11,31 @@
                 <a class="nav-link active" aria-current="page" href="{{ url('about') }}">About</a>
               </li>
               <li class="nav-item ">
-                <a class="nav-link" href="{{ url('live-data') }}">Live Data</a>
+                <a class="nav-link active" href="{{ url('live-data') }}">Live Data</a>
               </li>
+              @if (auth()->check())
               <li class="nav-item">
-                <a class="nav-link" href="{{ url('keberangkatan') }}">Keberangkatan</a>
+                <a class="nav-link active" href="{{ url('keberangkatan') }}">Keberangkatan</a>
               </li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <a class="nav-link dropdown-toggle active" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Master
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="{{ url('input-data-driver') }}">Data Driver</a></li>
-                  <li><a class="dropdown-item" href="{{ url('input-data-kendaraan') }}">Data Kendaraan</a></li>
-                  <li><a class="dropdown-item" href="{{ url('input-data-karyawan') }}">Data Karyawan</a></li>
+                  <li><a class="dropdown-item" href="{{ url('driver') }}">Data Driver</a></li>
+                  <li><a class="dropdown-item" href="{{ url('kendaraan') }}">Data Kendaraan</a></li>
+                  <li><a class="dropdown-item" href="{{ url('karyawan') }}">Data Karyawan</a></li>
                 </ul>
               </li>
+              @endif
             </ul>
             <form class="d-flex" role="search">
-              <a class="btn btn-dark" href="{{ url('login') }}" role="button">Login</a>
+                @if (auth()->check())
+                    <!-- Tambahkan tautan logout di sini jika pengguna sudah login -->
+                    <a class="btn btn-dark" href="{{ url('logout') }}" role="button">Logout</a>
+                @else
+                    <a class="btn btn-dark" href="{{ url('login') }}" role="button">Login</a>
+                @endif
             </form>
           </div>
         </div>

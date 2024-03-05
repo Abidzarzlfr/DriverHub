@@ -14,9 +14,20 @@ class DivisiSeeder extends Seeder
     public function run(): void
     {
         $divisi= [
+            ['nama_divisi' => 'Direksi'],
+            ['nama_divisi' => 'Direktur Utama'],
+            ['nama_divisi' => 'Direktur'],
+            ['nama_divisi' => 'Direktur Keuangan'],
+            ['nama_divisi' => 'Direktur HRD'],
             ['nama_divisi' => 'Manager'],
+            ['nama_divisi' => 'Manager HRD'],
+            ['nama_divisi' => 'Manager Pemasaran'],
             ['nama_divisi' => 'IT'],
-            ['nama_divisi' => 'Operasional']
+            ['nama_divisi' => 'Produksi'],
+            ['nama_divisi' => 'Driver'],
+            ['nama_divisi' => 'Operasional'],
+            ['nama_divisi' => 'Pemasaran'],
+            ['nama_divisi' => 'Umum']
         ];
 
         foreach ($divisi as $d) {

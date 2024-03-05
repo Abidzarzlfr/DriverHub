@@ -51,32 +51,30 @@
                   <th scope="col">Tujuan</th>
                   <th scope="col">Jam</th>
                   <th scope="col">Tanggal (dari)</th>
-                  <th scope="col">Tanggal (hingga)</th>
+                  <th scope="col">Tanggal (sampai)</th>
                   <th scope="col">Keterangan</th>
                   <th scope="col">Plat Nomor</th>
-                  <th scope="col">Kode</th>
                   <th scope="col">...</th>
                 </tr>
               </thead>
               <tbody>
                   @foreach($keberangkatan as $index => $item)
-                    <tr>
-                        <th scope="row">{{ $index + 1 }}</th>
-                        <td>{{ $item->driver->nama_driver}}</td>
-                        <td>Bandung</td>
-                        <td>Jakarta</td>
-                        <td>08:00 AM</td>
-                        <td>17-07-2023</td>
-                        <td>20-07-2023</td>
-                        <td>Genap</td>
-                        <td>D 1234 ACB</td>
-                        <td>DRV1</td>
+                  <tr>
+                    <th scope="row">{{ $index + 1 }}</th>
+                    <td>{{ $item->driver->nama_driver}}</td>
+                    <td>{{ $item->keberangkatan}}</td>
+                    <td>{{ $item->tujuan}}</td>
+                    <td>{{ $item->jam}}</td>
+                    <td>{{ $item->tanggal}}</td>
+                    <td>{{ $item->tanggal}}</td>
+                    <td>{{ $item->keterangan}}</td>
+                    <td>{{ $item->kendaraan->nomor_kendaraan}}</td>
                         <td>
                           <a class="btn btn-dark" href="{{ url('detail') }}" role="button">Detail</a>
                           <a class="btn btn-dark" href="{{ url('edit-keberangkatan') }}" role="button">Edit</a>
                           <a class="btn btn-dark" href="{{ url('delete') }}" role="button">Delete</a>
                         </td>
-                    </tr>
+                  </tr>
                   @endforeach
               </tbody>
             </table>

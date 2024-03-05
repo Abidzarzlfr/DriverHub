@@ -12,7 +12,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{ asset('style/live-data/live-data.css') }}">
+  <link rel="stylesheet" href="{{ asset('style/detail/detail.css') }}">
 
   <!-- Icon -->
   <script src="https://kit.fontawesome.com/85206701c2.js" crossorigin="anonymous"></script>
@@ -31,22 +31,20 @@
   <!-- Navbar -->
   @include('front-end.include.navbar')
 
-  <!-- Live Data Section -->
+  <!-- Detail Keberangkatan -->
+  @foreach($keberangkatan as $index => $item)
+  @php
+    $tanggalKeberangkatan = \Carbon\Carbon::parse($item->tanggal);
+    $tanggalHariIni = \Carbon\Carbon::now();
+  @endphp
+
+  {{-- Memeriksa apakah tanggal keberangkatan sama dengan tanggal hari ini --}}
+  @if ($tanggalKeberangkatan->isSameDay($tanggalHariIni))
   <div class="jadwal-hari-ini">
     <div class="container">
       <div class="heading-jadwal">
         <h1>Jadwal Hari Ini</h1>
       </div>
-      @foreach($keberangkatan as $index => $item)
-      @php
-      // Mengambil tanggal keberangkatan dari item
-      $tanggalKeberangkatan = \Carbon\Carbon::parse($item->tanggal);
-      // Membuat objek tanggal hari ini
-      $tanggalHariIni = \Carbon\Carbon::now();
-      @endphp
-
-      {{-- Memeriksa apakah tanggal keberangkatan sama dengan tanggal hari ini --}}
-      @if ($tanggalKeberangkatan->isSameDay($tanggalHariIni))
       <div class="widget1 d-flex justify-content-between mt-4 mb-5">
         <div class="widget-plat tilebox-one mt-4">
           <div class="widget-plat-content card-body">
@@ -60,14 +58,14 @@
           <div class="widget-tujuan-content card-body">
             <i class="fa-solid fa-route float-end"></i>
             <h2 class="widget-tujuan-content-kota">{{ $item->keberangkatan}}</h2>
-            <p class="widget-tujuan-content-desc">Keberangkatan</p>
+            <p class="widget-tujuan-content-desc"></p>
           </div>
         </div>
         <div class="widget-tujuan tilebox-one mt-4">
           <div class="widget-tujuan-content card-body">
             <i class="fa-solid fa-route float-end"></i>
             <h2 class="widget-tujuan-content-kota">{{ $item->tujuan}}</h2>
-            <p class="widget-tujuan-content-desc">Tujuan</p>
+            <p class="widget-tujuan-content-desc"></p>
           </div>
         </div>
       </div>
@@ -75,7 +73,7 @@
         <div class="widget-kode tilebox-one mt-1">
           <div class="widget-kode-content card-body">
             <i class="fa-solid fa-id-card float-end"></i>
-            <h2 class="widget-kode-content-kode">DRV1</h2>
+            <h2 class="widget-kode-content-kode">{{ $item->kode}}</h2>
             <h5 class="widget-kode-content-driver">{{ $item->driver->nama_driver}}</h5>
             <p class="widget-kode-content-desc">Keberangkatan</p>
           </div>
@@ -83,8 +81,8 @@
         <div class="widget-penumpang tilebox-one mt-1">
           <div class="widget-penumpang-content card-body">
             <i class="fa-solid fa-user-group float-end"></i>
-            <h2 class="widget-penumpang-content-kota">09</h2>
-            <p class="widget-penumpang-content-desc">Jumlah Penumpang</p>
+            <h2 class="widget-penumpang-content-kota">{{ $item->keterangan}}</h2>
+            <p class="widget-penumpang-content-desc">Keterangan</p>
           </div>
         </div>
         <div class="widget-jam tilebox-one m  t-1">
@@ -98,83 +96,40 @@
       </div>
     </div>
   </div>
+  @php
+    break;
+  @endphp
   @endif
   @endforeach
 
-  <!-- Table Keberangkatan -->
-  <div class="tabel-keberangkatan">
+  <!-- Table Penumpang -->
+  <div class="tabel-penumpang">
     <div class="container">
       <div class="heading-tabel">
-        <div class="heading-tabel-keberangkatan">
-          <h1>Tabel Keberangkatan</h1>
+        <div class="heading-tabel-penumpang">
+          <h1 class="border-bottom border-dark mb-5">Tabel Penumpang</h1>
         </div>
-        <div class="body-tabel-keberangkatan">
-          <table class="table table-hover">
+        <div class="body-tabel-penumpang">
+          <table class="table table-light table-hover">
             <thead>
               <tr>
                 <th scope="col">No</th>
-                <th scope="col">Nama Driver</th>
-                <th scope="col">Keberangkatan</th>
-                <th scope="col">Tujuan</th>
-                <th scope="col">Jam</th>
-                <th scope="col">Tanggal (dari)</th>
-                <th scope="col">Tanggal (hingga)</th>
-                <th scope="col">Keterangan</th>
-                <th scope="col">Plat Nomor</th>
+                <th scope="col">Nama Penumpang</th>
+                <th scope="col">Divisi</th>
                 <th scope="col">Kode</th>
               </tr>
             </thead>
             <tbody>
-
-              @foreach($keberangkatan as $index => $item)
+              @foreach($penumpang as $index => $item)
               <tr>
                 <th scope="row">{{ $index + 1 }}</th>
-                <td>{{ $item->driver->nama_driver}}</td>
-                <td>{{ $item->keberangkatan}}</td>
-                <td>{{ $item->tujuan}}</td>
-                <td>{{ $item->jam}}</td>
-                <td>{{ $item->tanggal}}</td>
-                <td>{{ $item->tanggal}}</td>
-                <td>{{ $item->keterangan}}</td>
-                <td>{{ $item->kendaraan->nomor_kendaraan}}</td>
-                <td>DRV1</td>
+                <td>{{ $item->karyawan->nama_karyawan }}</td>
+                <td>{{ $item->karyawan->divisi_id }}</td>
               </tr>
               @endforeach
             </tbody>
           </table>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Table Driver -->
-  <div class="tabel-driver">
-    <div class="container">
-      <div class="heading-tabel">
-        <div class="heading-tabel-driver">
-          <h1>Tabel driver</h1>
-        </div>
-        <div class="body-tabel-driver">
-          <table class="table table-hover">
-            <thead>
-              <tr>
-                <th scope="col">No</th>
-                <th scope="col">Nama Driver</th>
-                <th scope="col">Status</th>
-                <th scope="col">NPK</th>
-              </tr>
-            </thead>
-            <tbody>
-              @foreach($drivers as $driver)
-              <tr>
-                <th scope="row">1</th>
-                <td>{{ $driver->nama_driver }}</td>
-                <td>{{ $driver->status }}</td>
-                <td>{{ $driver->npk }}</td>
-              </tr>
-              @endforeach
-            </tbody>
-          </table>
+          <a class="btn btn-dark" href="{{ url('edit-keberangkatan') }}" role="button">Edit</a>
         </div>
       </div>
     </div>

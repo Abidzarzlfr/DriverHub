@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- CSS -->
-    <link rel="stylesheet" href="{{ asset('style/Tabel-Master/input-data-driver/input-data-karyawan.css') }}">
+    <link rel="stylesheet" href="{{ asset('style/Tabel-Master/input-data-karyawan/input-data-karyawan.css') }}">
 
     <!-- Icon -->
     <script src="https://kit.fontawesome.com/85206701c2.js" crossorigin="anonymous"></script>
@@ -50,9 +50,13 @@
                     <input type="text" name="npk" class="form-control" id="npk" aria-describedby="emailHelp">
                 </div>
                 <div class="mb-3">
-                    <label for="divisi" class="form-label">Divisi</label>
-                    <input type="text" name="divisi_id" class="form-control" id="divisi" aria-describedby="emailHelp">
-                </div>
+                <label for="disabledSelect" class="form-label">Divisi</label>
+                <select id="disabledSelect" class="form-select" name='divisi_id'>
+                  @foreach ($divisi as $item)
+                    <option value="{{ $item->divisi_id }}">{{ $item->nama_divisi }}</option>
+                  @endforeach
+                </select>
+              </div>
               <button type="submit" class="btn btn-dark mt-5">Simpan</button>
             </fieldset>
           </form>

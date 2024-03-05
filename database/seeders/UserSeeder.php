@@ -15,7 +15,7 @@ class UserSeeder extends Seeder
     public function run(): void
     {
         $users= [
-            ['user_id' => '1', 'nama' => 'Administrator', 'email' => 'admin@driverhub.com', 'password' => Hash::make('Admin123')] 
+            ['user_id' => '1', 'nama' => 'Administrator', 'email' => 'admin@driverhub.com', 'password' => Hash::make('Admin123')],
         ];
 
         foreach ($users as $user) {
